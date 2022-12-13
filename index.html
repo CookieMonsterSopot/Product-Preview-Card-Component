@@ -1,36 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product preview card component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:wght@500;700;"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Product preview card component</title>
 
-  Preview
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      html,
+      body {
+        font-family: "Montserrat";
+        text-align: center;
+        background-color: hsl(30, 38%, 92%);
+      }
+      .container {
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 450px;
+        gap: 0px 0px;
+        grid-auto-flow: column;
+        justify-content: center;
+        align-content: center;
+        grid-template-areas: "left right";
+        width: 600px;
+      }
 
-  Gabrielle Essence Eau De Parfum
+      .left {
+        margin: 0;
+        border-radius: 15px 0 0 15px;
+        grid-area: left;
+        height: auto;
+        width: auto;
+        max-width: 300px;
+        max-height: 450px;
+        content: url("images/image-product-desktop.jpg");
+      }
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
+      .right {
+        text-align: left;
+        border-radius: 0 15px 15px 0;
+        background-color: white;
+        grid-area: right;
+        padding: 30px;
+      }
 
-  $149.99
-  $169.99
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        vertical-align: bottom;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+        vertical-align: bottom;
+      }
+      footer {
+        vertical-align: bottom;
+      }
 
-  Add to Cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      h1 {
+        font-family: "Fraunces";
+        font-size: 35px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        letter-spacing: -0.5px;
+        line-height: 35px;
+      }
+      #text1 {
+        margin-top: 5px;
+        font-size: 12px;
+        margin-bottom: 0px;
+
+        letter-spacing: 5px;
+      }
+      #text2 {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 40px;
+      }
+
+      .price p {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+      }
+      .price b {
+        font-size: 30px;
+        color: hsl(158, 36%, 37%);
+        font-family: "Fraunces";
+        margin-right: 15px;
+      }
+      button {
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+        background-color: hsl(158, 36%, 37%);
+        width: 230px;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        justify-self: center;
+      }
+      @media screen and (max-width: 700px) and (min-width: 320px) {
+        .container {
+          margin-top: 35px;
+          display: block;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 340px;
+        }
+        .left {
+          height: auto;
+          width: auto;
+          max-width: 340px;
+          max-height: 240px;
+          content: url("images/image-product-mobile.jpg");
+          border-radius: 15px 15px 0 0;
+        }
+        .right {
+          margin-top: 0;
+          height: 340px;
+          border-radius: 0 0 15px 15px;
+          padding: 20px;
+        }
+        h1 {
+          margin-right: 0px;
+        }
+        #text2 {
+          margin-right: 10px;
+          margin-bottom: 20px;
+        }
+        button {
+          width: 300px;
+          justify-self: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <figure class="left">
+        <img src="images/image-product-desktop.jpg" alt="" aria-hidden="true" />
+      </figure>
+      <article class="right">
+        <p id="text1">PREVIEW</p>
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+        <p id="text2">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+        <section class="price">
+          <p id="text3">
+            <b>$149.99</b
+            ><span style="text-decoration: line-through">$169.99</span>
+          </p>
+        </section>
+        <button>Add to Cart</button>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Grzegorz Wozniak</a>.
+    </footer>
+  </body>
 </html>
