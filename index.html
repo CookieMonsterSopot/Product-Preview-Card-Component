@@ -111,15 +111,25 @@
         margin-right: 15px;
       }
       button {
+        font-family: "Montserrat";
+        display: inline;
+
         color: white;
-        font-size: 14px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        vertical-align: middle;
         font-weight: 700;
         background-color: hsl(158, 36%, 37%);
         width: 230px;
         height: 50px;
         border: none;
         border-radius: 5px;
-        justify-self: center;
+
+        cursor: pointer;
+      }
+      button img {
+        width: 1em;
+        margin-right: 12px;
       }
       @media screen and (max-width: 700px) and (min-width: 320px) {
         .container {
@@ -154,6 +164,12 @@
           width: 300px;
           justify-self: center;
         }
+        button a {
+          text-decoration: none;
+        }
+        button:hover {
+          background-color: hsl(156, 59%, 18z%);
+        }
       }
     </style>
   </head>
@@ -175,7 +191,11 @@
             ><span style="text-decoration: line-through">$169.99</span>
           </p>
         </section>
-        <button>Add to Cart</button>
+        <button>
+          <a class="button" href="#"></a>
+          <img src="images/icon-cart.svg" alt="" aria-hidden="true" />Add to
+          Cart
+        </button>
       </article>
     </main>
 
